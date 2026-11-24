@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darslar - Batafsil Ma'lumot</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- A1: Semantic header with navigation -->
+    <header>
+        <div class="container">
+            <h1>💻 Dasturlash Darslar</h1>
+            <!-- A1: Navigation menu -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Bosh Sahifa</a></li>
+                    <li><a href="batafsil.html">Darslar</a></li>
+                    <li><a href="aloqa.html">Aloqa</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- A1: Main content area -->
+    <main>
+        <div class="container">
+            <section>
+                <article>
+                    <h2>Dasturlash Darslarining Batafsil Tavsifi</h2>
+                    <p>Bu sahifada siz har bir dars haqida ko'proq ma'lumot olishingiz mumkin. Har bir dars turli mavzularni o'z ichiga oladi va amaliy topshiriqlar mavjud.</p>
+                </article>
+            </section>
+
+            <!-- A2: Multiple articles with sections -->
+            <section>
+                <h2>1. HTML Asoslari</h2>
+
+                <article>
+                    <h3>HTML Nima?</h3>
+                    <p>HTML (HyperText Markup Language) - veb-sahifalarning tuzilishini yaratish uchun ishlatiladigan belgilash tilidir. U semantic tuzilma ta'minlaydi va SEO uchun muhim rol o'ynaydi.</p>
+                </article>
+
+                <article>
+                    <h3>HTML Tuzilmasi</h3>
+                    <p>Har bir HTML sahifasi quyidagi asosiy tuzilmaga ega bo'ladi:</p>
+                    <ul>
+                        <li>&lt;!DOCTYPE html&gt; - Hujjat turi e'loni</li>
+                        <li>&lt;html&gt; - Butun hujjatning o'rab oluvchi elementi</li>
+                        <li>&lt;head&gt; - Meta ma'lumotlar va uslublar</li>
+                        <li>&lt;body&gt; - Ko'rinib turadigan mazmun</li>
+                    </ul>
+                </article>
+
+                <!-- A3-A5: Table with specific structure -->
+                <table>
+                    <caption>HTML Teguniyang Ro'yxati</caption>
+                    <thead>
+                        <tr>
+                            <th>Teg Nomi</th>
+                            <th>Tavsifi</th>
+                            <th>Misol</th>
+                            <th>Atributi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&lt;h1&gt; - &lt;h6&gt;</td>
+                            <td>Sarlavhalar</td>
+                            <td>&lt;h1&gt;Bosh Sarlavha&lt;/h1&gt;</td>
+                            <td rowspan="2">id, class, style</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;p&gt;</td>
+                            <td>Paragraf</td>
+                            <td>&lt;p&gt;Matn&lt;/p&gt;</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;a&gt;</td>
+                            <td>Havolalar</td>
+                            <td>&lt;a href="url"&gt;Havola&lt;/a&gt;</td>
+                            <td colspan="2">href, target, title</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;img&gt;</td>
+                            <td>Rasmlar</td>
+                            <td>&lt;img src="rasm.jpg" alt="tavsif"&gt;</td>
+                            <td>src, alt, width, height</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;form&gt;</td>
+                            <td>Shakllar</td>
+                            <td>&lt;form method="post"&gt;...&lt;/form&gt;</td>
+                            <td>action, method, enctype</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- A2: Aside element -->
+                <aside>
+                    <h3>💡 Maslahat</h3>
+                    <p>HTML teguniyang semantik qo'llash muhim. Masalan, &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, &lt;footer&gt; kabi teguniyang to'g'ri ishlatsangiz, veb-saytingiz SEO bo'yicha yaxshi bo'ladi.</p>
+                </aside>
+            </section>
+
+            <!-- A2: Second section with articles -->
+            <section>
+                <h2>2. CSS Dizayni</h2>
+
+                <article>
+                    <h3>CSS Nima?</h3>
+                    <p>CSS (Cascading Style Sheets) - veb-sahifalarni bezash va uslubini boshqarish uchun ishlatiladigan til. Bu HTML tuzilmasiga rang, o'lcham va pozitsiyani beradi.</p>
+                </article>
+
+                <article>
+                    <h3>CSS Selektorlari</h3>
+                    <p>CSS-da turli selektor turlari mavjud:</p>
+                </article>
+
+                <div class="cards-row">
+                    <div class="card-item">
+                        <h3>Element Selektor</h3>
+                        <p>Barcha element turlarini tanlash:</p>
+                        <code>p { color: blue; }</code>
+                    </div>
+
+                    <div class="card-item">
+                        <h3>Class Selektor</h3>
+                        <p>Class atributi bilan elementlarni tanlash:</p>
+                        <code>.my-class { color: red; }</code>
+                    </div>
+
+                    <div class="card-item">
+                        <h3>ID Selektor</h3>
+                        <p>ID atributi bilan elementlarni tanlash:</p>
+                        <code>#my-id { color: green; }</code>
+                    </div>
+
+                    <div class="card-item">
+                        <h3>Attribute Selektor</h3>
+                        <p>Atributi bilan elementlarni tanlash:</p>
+                        <code>input[type="text"] { border: 1px solid blue; }</code>
+                    </div>
+
+                    <div class="card-item">
+                        <h3>Pseudo-class</h3>
+                        <p>Elemento'z xususiy holatini tanlash:</p>
+                        <code>a:hover { color: purple; }</code>
+                    </div>
+
+                    <div class="card-item">
+                        <h3>Kombinatorlar</h3>
+                        <p>Murakkab selektorlar:</p>
+                        <code>div > p { margin: 10px; }</code>
+                    </div>
+                </div>
+
+                <!-- A2: Aside for CSS -->
+                <aside>
+                    <h3>📚 CSS Layout Usullari</h3>
+                    <p>Hozirgi CSS-da asosiy layout usullari quyidagilar:</p>
+                    <ul>
+                        <li><strong>Float:</strong> Eski usul, hozir juda kam ishlatiladı</li>
+                        <li><strong>Flexbox:</strong> Birgina o'qi bo'ylab narihani joylashtirish</li>
+                        <li><strong>Grid:</strong> Ikki o'qi bo'ylab murakkab layoutlar</li>
+                        <li><strong>Positioning:</strong> Absolute, relative, fixed pozitsiyalash</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <!-- A2: Third section -->
+            <section>
+                <h2>3. JavaScript Dasturlash</h2>
+
+                <article>
+                    <h3>JavaScript Nima?</h3>
+                    <p>JavaScript - veb-sahifalarni interaktiv qilish uchun ishlatiladigan dasturlash tili. U klient-tomonida ishlaydi va foydalanuvchi bilan o'zaro aloqa o'rnatadi.</p>
+                </article>
+
+                <article>
+                    <h3>JavaScript Asosiy Tushunchalar</h3>
+                    <ul>
+                        <li><strong>O'zgaruvchilar:</strong> var, let, const bilan e'lon qilinadi</li>
+                        <li><strong>Ma'lumot turlari:</strong> number, string, boolean, object, array</li>
+                        <li><strong>Funksiyalar:</strong> Qayta foydalaniladigan kod bloklari</li>
+                        <li><strong>Massivlar:</strong> Ko'p qiymatlarni saqlash</li>
+                        <li><strong>Ob'yektlar:</strong> Bog'langan ma'lumotlarni saqlash</li>
+                    </ul>
+                </article>
+
+                <!-- A10-A11: Media section -->
+                <div>
+                    <h3>JavaScript Misol - Interaktiv Hisob Kalkulyatori</h3>
+                    <figure>
+                        <img src="rasmlar/javascript.jpg" alt="JavaScript dasturlash tili bilan yozilgan kod, monitor ekranida ko'rinib turadi">
+                        <figcaption>JavaScript bilan yozilgan murakkab dastur kodi</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- B7: Back to top button -->
+    <button class="back-to-top" id="backToTop" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'});">↑</button>
+    <div id="top"></div>
+
+    <!-- A1: Semantic footer -->
+    <footer>
+        <div class="container">
+            <!-- B10: Footer with 2+ columns using Flexbox -->
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Haqida</h3>
+                    <p>Bu veb-sayt dasturlash asoslarini o'rganish uchun mo'ljallangan ta'lim platformasi.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Qo'llanmalar</h3>
+                    <ul>
+                        <li><a href="#">HTML Qo'llanmasi</a></li>
+                        <li><a href="#">CSS Qo'llanmasi</a></li>
+                        <li><a href="#">JavaScript Qo'llanmasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ijtimoiy Tarmoqlar</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dasturlash Darslar. Barcha huquqlar saqlanib qoladi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

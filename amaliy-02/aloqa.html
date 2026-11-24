@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloqa - Biz Bilan Bog'lanish</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- A1: Semantic header with navigation -->
+    <header>
+        <div class="container">
+            <h1>💻 Dasturlash Darslar</h1>
+            <!-- A1: Navigation menu -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Bosh Sahifa</a></li>
+                    <li><a href="batafsil.html">Darslar</a></li>
+                    <li><a href="aloqa.html">Aloqa</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- A1: Main content area -->
+    <main>
+        <div class="container">
+            <section>
+                <article>
+                    <h2>Biz Bilan Bog'lanish</h2>
+                    <p>Agar sizda savollar yoki takliflar bo'lsa, iltimos quyidagi formani to'ldiring. Biz tez orada sizga javob beramiz.</p>
+                </article>
+            </section>
+
+            <!-- A2: Section with form and aside -->
+            <section>
+                <div class="form-container">
+                    <!-- A6-A9: Contact form with 8+ fields -->
+                    <h2>Aloqa Formasi</h2>
+
+                    <form method="post" action="/submit-form">
+                        <!-- A6, A7: Text input field -->
+                        <div class="form-group">
+                            <label for="fullname">To'liq Ismingiz</label>
+                            <input
+                                type="text"
+                                id="fullname"
+                                name="fullname"
+                                placeholder="Ismingizni kiriting"
+                                required>
+                        </div>
+
+                        <!-- A7: Email input -->
+                        <div class="form-group">
+                            <label for="email">Email Manzili</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="email@example.com"
+                                required>
+                        </div>
+
+                        <!-- A7: Telephone input -->
+                        <div class="form-group">
+                            <label for="phone">Telefon Raqami</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+998 (99) 999-99-99"
+                                pattern="\+998[0-9]{9}"
+                                title="Telefon raqamini +998 bilan boshlang va 9 raqam qo'shing"
+                                required>
+                        </div>
+
+                        <!-- A7: Date input -->
+                        <div class="form-group">
+                            <label for="visitdate">Ziyorat qilish vaqti</label>
+                            <input
+                                type="date"
+                                id="visitdate"
+                                name="visitdate"
+                                required>
+                        </div>
+
+                        <!-- A7: Number input -->
+                        <div class="form-group">
+                            <label for="people">Nechta odam?</label>
+                            <input
+                                type="number"
+                                id="people"
+                                name="people"
+                                min="1"
+                                max="100"
+                                placeholder="Odam soni"
+                                required>
+                        </div>
+
+                        <!-- A8, A9: Radio buttons with fieldset and legend -->
+                        <fieldset>
+                            <legend>Dars Turi</legend>
+                            <div class="radio-group">
+                                <div>
+                                    <input
+                                        type="radio"
+                                        id="html_course"
+                                        name="course_type"
+                                        value="html">
+                                    <label for="html_course">HTML Asoslari</label>
+                                </div>
+                                <div>
+                                    <input
+                                        type="radio"
+                                        id="css_course"
+                                        name="course_type"
+                                        value="css">
+                                    <label for="css_course">CSS Dizayni</label>
+                                </div>
+                                <div>
+                                    <input
+                                        type="radio"
+                                        id="js_course"
+                                        name="course_type"
+                                        value="javascript">
+                                    <label for="js_course">JavaScript Dasturlash</label>
+                                </div>
+                                <div>
+                                    <input
+                                        type="radio"
+                                        id="react_course"
+                                        name="course_type"
+                                        value="react">
+                                    <label for="react_course">React Asoslari</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- A7, A8: Checkboxes -->
+                        <fieldset>
+                            <legend>Qiziqargan Mavzular</legend>
+                            <div class="checkbox-group">
+                                <div>
+                                    <input
+                                        type="checkbox"
+                                        id="frontend"
+                                        name="interests"
+                                        value="frontend">
+                                    <label for="frontend">Frontend Dasturlash</label>
+                                </div>
+                                <div>
+                                    <input
+                                        type="checkbox"
+                                        id="backend"
+                                        name="interests"
+                                        value="backend">
+                                    <label for="backend">Backend Dasturlash</label>
+                                </div>
+                                <div>
+                                    <input
+                                        type="checkbox"
+                                        id="mobile"
+                                        name="interests"
+                                        value="mobile">
+                                    <label for="mobile">Mobile Dasturlash</label>
+                                </div>
+                                <div>
+                                    <input
+                                        type="checkbox"
+                                        id="database"
+                                        name="interests"
+                                        value="database">
+                                    <label for="database">Ma'lumotlar Bazasi</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- A7: Select dropdown -->
+                        <div class="form-group">
+                            <label for="experience">Dasturlash Bo'yicha Tajribasi</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">--- Tanlang ---</option>
+                                <option value="none">Boshlangi (tajribam yo'q)</option>
+                                <option value="beginner">Boshlang'ich (3 oydan ko'p emas)</option>
+                                <option value="intermediate">O'rta (3 oydan 1 yilgacha)</option>
+                                <option value="advanced">Ilg'or (1 yildan ko'p)</option>
+                                <option value="expert">Ekspert (3 yildan ko'p)</option>
+                            </select>
+                        </div>
+
+                        <!-- A7: Textarea -->
+                        <div class="form-group">
+                            <label for="message">Xabar va Izohlar</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="O'z shushshanchangizni yozib qoldiring..."
+                                required></textarea>
+                        </div>
+
+                        <!-- A9: Submit button -->
+                        <div class="form-group">
+                            <button type="submit">Yuborish</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- A2: Aside element for contact info -->
+                <aside>
+                    <h3>📞 Boshqa Aloqa Usullari</h3>
+                    <p><strong>Manzil:</strong> Abu Rayhon Beruniy nomidagi Urganch davlat universiteti, Dasturlash kafedrase, Urganch, O'zbekiston</p>
+                    <p><strong>Telefon:</strong> +998 (61) 223-45-67</p>
+                    <p><strong>Email:</strong> info@urdu.uz</p>
+                    <p><strong>Ish vaqti:</strong> Dushanba-Juma 09:00 - 18:00</p>
+                    <p><strong>Qo'shimcha:</strong> Shabnai va yakshanba rofqanda ish qilmayiz.</p>
+                </aside>
+            </section>
+
+            <!-- A2: Section with another table -->
+            <section>
+                <h2>Dars Jadvali</h2>
+
+                <!-- A3-A5: Schedule table -->
+                <table>
+                    <caption>Haftaviy Dars Jadvali</caption>
+                    <thead>
+                        <tr>
+                            <th>Kun</th>
+                            <th>Vaqt</th>
+                            <th>Dars Nomi</th>
+                            <th>O'qituvchi</th>
+                            <th>Xona</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dushanba</td>
+                            <td rowspan="2">09:00 - 10:30</td>
+                            <td>HTML Asoslari</td>
+                            <td>A.Aliyev</td>
+                            <td>101</td>
+                        </tr>
+                        <tr>
+                            <td>Dushanba</td>
+                            <td>CSS Dizayni</td>
+                            <td>B.Rahimova</td>
+                            <td>102</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Seshanba 11:00 - 12:30</td>
+                            <td>JavaScript Asoslari</td>
+                            <td>C.Jalilov</td>
+                            <td>103</td>
+                        </tr>
+                        <tr>
+                            <td>Chorshanba</td>
+                            <td>14:00 - 15:30</td>
+                            <td>Flexbox va Grid</td>
+                            <td>D.Mahmudzoda</td>
+                            <td>104</td>
+                        </tr>
+                        <tr>
+                            <td>Payshanba</td>
+                            <td>16:00 - 17:30</td>
+                            <td>React Asoslari</td>
+                            <td>E.Karimova</td>
+                            <td>105</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- A10-A11: Media section -->
+                <div>
+                    <h3>Bizning Dasturlash Markazi</h3>
+                    <figure>
+                        <img src="rasmlar/classroom.jpg" alt="Dasturlash sinfida o'quvchilar kompyuterda ishlayotgan holati, interaktiv doska bilan jihozlangan">
+                        <figcaption>Zamonaviy texnika bilan jihozlangan dasturlash sinfi</figcaption>
+                    </figure>
+
+                    <!-- A11: Google Maps iframe -->
+                    <h3>Bizning Manzilimiz</h3>
+                    <iframe
+                        width="100%"
+                        height="400"
+                        style="border:0;"
+                        loading="lazy"
+                        allowfullscreen=""
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.8769139148753!2d61.37!3d41.56!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sUrganch%20State%20University!5e0!3m2!1suz!2s!4v1234567890123"
+                        title="Abu Rayhon Beruniy nomidagi Urganch davlat universitetining manzili">
+                    </iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- B7: Back to top button -->
+    <button class="back-to-top" id="backToTop" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'});">↑</button>
+    <div id="top"></div>
+
+    <!-- A1: Semantic footer -->
+    <footer>
+        <div class="container">
+            <!-- B10: Footer with 2+ columns using Flexbox -->
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Haqida</h3>
+                    <p>Bu veb-sayt dasturlash asoslarini o'rganish uchun mo'ljallangan ta'lim platformasi.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Qo'llanmalar</h3>
+                    <ul>
+                        <li><a href="#">HTML Qo'llanmasi</a></li>
+                        <li><a href="#">CSS Qo'llanmasi</a></li>
+                        <li><a href="#">JavaScript Qo'llanmasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ijtimoiy Tarmoqlar</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dasturlash Darslar. Barcha huquqlar saqlanib qoladi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const phone = document.getElementById('phone').value;
+            const phonePattern = /^\+998[0-9]{9}$/;
+
+            if (!phonePattern.test(phone)) {
+                e.preventDefault();
+                alert('Telefon raqamini +998 bilan boshlang va 9 raqam qo\'shing!');
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
