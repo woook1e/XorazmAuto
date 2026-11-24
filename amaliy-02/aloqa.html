@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- A1: Semantic header with navigation -->
     <header>
         <div class="container">
             <h1>💻 Dasturlash Darslar</h1>
-            <!-- A1: Navigation menu -->
             <nav>
                 <ul>
                     <li><a href="index.html">Bosh Sahifa</a></li>
@@ -22,7 +20,6 @@
         </div>
     </header>
 
-    <!-- A1: Main content area -->
     <main>
         <div class="container">
             <section>
@@ -32,14 +29,11 @@
                 </article>
             </section>
 
-            <!-- A2: Section with form and aside -->
             <section>
                 <div class="form-container">
-                    <!-- A6-A9: Contact form with 8+ fields -->
                     <h2>Aloqa Formasi</h2>
 
                     <form method="post" action="/submit-form">
-                        <!-- A6, A7: Text input field -->
                         <div class="form-group">
                             <label for="fullname">To'liq Ismingiz</label>
                             <input
@@ -50,7 +44,6 @@
                                 required>
                         </div>
 
-                        <!-- A7: Email input -->
                         <div class="form-group">
                             <label for="email">Email Manzili</label>
                             <input
@@ -61,7 +54,6 @@
                                 required>
                         </div>
 
-                        <!-- A7: Telephone input -->
                         <div class="form-group">
                             <label for="phone">Telefon Raqami</label>
                             <input
@@ -74,7 +66,6 @@
                                 required>
                         </div>
 
-                        <!-- A7: Date input -->
                         <div class="form-group">
                             <label for="visitdate">Ziyorat qilish vaqti</label>
                             <input
@@ -84,7 +75,6 @@
                                 required>
                         </div>
 
-                        <!-- A7: Number input -->
                         <div class="form-group">
                             <label for="people">Nechta odam?</label>
                             <input
@@ -97,7 +87,6 @@
                                 required>
                         </div>
 
-                        <!-- A8, A9: Radio buttons with fieldset and legend -->
                         <fieldset>
                             <legend>Dars Turi</legend>
                             <div class="radio-group">
@@ -136,7 +125,6 @@
                             </div>
                         </fieldset>
 
-                        <!-- A7, A8: Checkboxes -->
                         <fieldset>
                             <legend>Qiziqargan Mavzular</legend>
                             <div class="checkbox-group">
@@ -175,7 +163,6 @@
                             </div>
                         </fieldset>
 
-                        <!-- A7: Select dropdown -->
                         <div class="form-group">
                             <label for="experience">Dasturlash Bo'yicha Tajribasi</label>
                             <select id="experience" name="experience" required>
@@ -188,7 +175,6 @@
                             </select>
                         </div>
 
-                        <!-- A7: Textarea -->
                         <div class="form-group">
                             <label for="message">Xabar va Izohlar</label>
                             <textarea
@@ -198,14 +184,12 @@
                                 required></textarea>
                         </div>
 
-                        <!-- A9: Submit button -->
                         <div class="form-group">
                             <button type="submit">Yuborish</button>
                         </div>
                     </form>
                 </div>
 
-                <!-- A2: Aside element for contact info -->
                 <aside>
                     <h3>📞 Boshqa Aloqa Usullari</h3>
                     <p><strong>Manzil:</strong> Abu Rayhon Beruniy nomidagi Urganch davlat universiteti, Dasturlash kafedrase, Urganch, O'zbekiston</p>
@@ -216,11 +200,9 @@
                 </aside>
             </section>
 
-            <!-- A2: Section with another table -->
             <section>
                 <h2>Dars Jadvali</h2>
 
-                <!-- A3-A5: Schedule table -->
                 <table>
                     <caption>Haftaviy Dars Jadvali</caption>
                     <thead>
@@ -269,7 +251,6 @@
                     </tbody>
                 </table>
 
-                <!-- A10-A11: Media section -->
                 <div>
                     <h3>Bizning Dasturlash Markazi</h3>
                     <figure>
@@ -294,14 +275,11 @@
         </div>
     </main>
 
-    <!-- B7: Back to top button -->
     <button class="back-to-top" id="backToTop" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'});">↑</button>
     <div id="top"></div>
 
-    <!-- A1: Semantic footer -->
     <footer>
         <div class="container">
-            <!-- B10: Footer with 2+ columns using Flexbox -->
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Haqida</h3>
@@ -331,7 +309,6 @@
     </footer>
 
     <script>
-        // Show/hide back to top button
         window.addEventListener('scroll', function() {
             const backToTop = document.getElementById('backToTop');
             if (window.scrollY > 300) {
@@ -341,7 +318,6 @@
             }
         });
 
-        // Form validation
         document.querySelector('form').addEventListener('submit', function(e) {
             const phone = document.getElementById('phone').value;
             const phonePattern = /^\+998[0-9]{9}$/;

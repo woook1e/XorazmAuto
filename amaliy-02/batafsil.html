@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- A1: Semantic header with navigation -->
     <header>
         <div class="container">
             <h1>💻 Dasturlash Darslar</h1>
-            <!-- A1: Navigation menu -->
             <nav>
                 <ul>
                     <li><a href="index.html">Bosh Sahifa</a></li>
@@ -22,7 +20,6 @@
         </div>
     </header>
 
-    <!-- A1: Main content area -->
     <main>
         <div class="container">
             <section>
@@ -32,7 +29,6 @@
                 </article>
             </section>
 
-            <!-- A2: Multiple articles with sections -->
             <section>
                 <h2>1. HTML Asoslari</h2>
 
@@ -52,7 +48,6 @@
                     </ul>
                 </article>
 
-                <!-- A3-A5: Table with specific structure -->
                 <table>
                     <caption>HTML Teguniyang Ro'yxati</caption>
                     <thead>
@@ -96,14 +91,12 @@
                     </tbody>
                 </table>
 
-                <!-- A2: Aside element -->
                 <aside>
                     <h3>💡 Maslahat</h3>
                     <p>HTML teguniyang semantik qo'llash muhim. Masalan, &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, &lt;footer&gt; kabi teguniyang to'g'ri ishlatsangiz, veb-saytingiz SEO bo'yicha yaxshi bo'ladi.</p>
                 </aside>
             </section>
 
-            <!-- A2: Second section with articles -->
             <section>
                 <h2>2. CSS Dizayni</h2>
 
@@ -155,7 +148,6 @@
                     </div>
                 </div>
 
-                <!-- A2: Aside for CSS -->
                 <aside>
                     <h3>📚 CSS Layout Usullari</h3>
                     <p>Hozirgi CSS-da asosiy layout usullari quyidagilar:</p>
@@ -168,7 +160,6 @@
                 </aside>
             </section>
 
-            <!-- A2: Third section -->
             <section>
                 <h2>3. JavaScript Dasturlash</h2>
 
@@ -188,7 +179,6 @@
                     </ul>
                 </article>
 
-                <!-- A10-A11: Media section -->
                 <div>
                     <h3>JavaScript Misol - Interaktiv Hisob Kalkulyatori</h3>
                     <figure>
@@ -200,14 +190,11 @@
         </div>
     </main>
 
-    <!-- B7: Back to top button -->
     <button class="back-to-top" id="backToTop" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'});">↑</button>
     <div id="top"></div>
 
-    <!-- A1: Semantic footer -->
     <footer>
         <div class="container">
-            <!-- B10: Footer with 2+ columns using Flexbox -->
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Haqida</h3>
@@ -237,7 +224,6 @@
     </footer>
 
     <script>
-        // Show/hide back to top button
         window.addEventListener('scroll', function() {
             const backToTop = document.getElementById('backToTop');
             if (window.scrollY > 300) {

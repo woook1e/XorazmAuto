@@ -428,7 +428,6 @@
     <script src="js/masala5.js"></script>
 
     <script>
-        // Console outputni control qilish uchun
         const outputDiv = document.getElementById('output');
         const originalLog = console.log;
         const originalError = console.error;
@@ -441,7 +440,6 @@
             outputDiv.scrollTop = outputDiv.scrollHeight;
         }
 
-        // Console.log qo'llanma qilish
         console.log = function(...args) {
             addOutput(args.map(arg => {
                 if (typeof arg === 'object') {
@@ -533,7 +531,6 @@
             addOutput('✅ BARCHA MASALALAR BAJARILDI!', 'success');
         }
 
-        // Sahifa yuklanganda boshlang'ich xabar
         window.addEventListener('load', () => {
             clearConsole();
             addOutput('👋 Xush kelibsiz! Masala tugmasini bosing.', 'info');

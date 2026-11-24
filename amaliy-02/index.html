@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- A1: Semantic header with navigation -->
     <header>
         <div class="container">
             <h1>💻 Dasturlash Darslar</h1>
-            <!-- A1: Navigation menu as ul list inside nav -->
             <nav>
                 <ul>
                     <li><a href="index.html">Bosh Sahifa</a></li>
@@ -22,10 +20,8 @@
         </div>
     </header>
 
-    <!-- A1: Main content area -->
     <main>
         <div class="container">
-            <!-- A2: Sections with article elements -->
             <section>
                 <article>
                     <h2>Dasturlashga Kirish</h2>
@@ -33,7 +29,6 @@
                     <p>Dasturlash - bu faqat kod yozish emas, bu kreativ muammolarni hal qilishdir. Har bir dasturchi o'z yo'lidan boshlaydi.</p>
                 </article>
 
-                <!-- A6, B6: Badge on card -->
                 <div class="cards-row">
                     <div class="card-item">
                         <span class="badge">Yangi</span>
@@ -57,11 +52,9 @@
                 </div>
             </section>
 
-            <!-- A2: Section with aside -->
             <section>
                 <h2>Nima O'rganishimiz Kerak?</h2>
 
-                <!-- A3-A5: Table with specific structure -->
                 <table>
                     <caption>Dasturlash Kurslarining Jadavali</caption>
                     <thead>
@@ -110,7 +103,6 @@
                     </tbody>
                 </table>
 
-                <!-- A2: Aside element -->
                 <aside>
                     <h3>📌 Muhim Eslatma</h3>
                     <p>Dasturlash o'rganish vaqt va sabr talab qiladi. Dastlab qiyinroq bo'lishi tabiiy. Har kuni kamida 2-3 soat amal qilib, yil oxirida professional dasturchi bo'lishingiz mumkin.</p>
@@ -118,7 +110,6 @@
                 </aside>
             </section>
 
-            <!-- A10-A11: Media section with figure and figcaption -->
             <section>
                 <h2>Media va Resurslar</h2>
 
@@ -132,21 +123,17 @@
                     <figcaption>Ko'p tekislik dasturlash jarayoni va kod tahriri</figcaption>
                 </figure>
 
-                <!-- A11: Iframe element with title -->
                 <h3>Veb Dasturlash Haqida Video</h3>
                 <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Veb Dasturlash Haqida Tanishuv" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </section>
         </div>
     </main>
 
-    <!-- B7: Back to top button -->
     <button class="back-to-top" id="backToTop" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'});">↑</button>
     <div id="top"></div>
 
-    <!-- A1: Semantic footer -->
     <footer>
         <div class="container">
-            <!-- B10: Footer with 2+ columns using Flexbox -->
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Haqida</h3>
@@ -176,7 +163,6 @@
     </footer>
 
     <script>
-        // Show/hide back to top button
         window.addEventListener('scroll', function() {
             const backToTop = document.getElementById('backToTop');
             if (window.scrollY > 300) {
