@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-amaliy ish - JavaScript asoslari</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .info-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-section h2 {
+            color: #667eea;
+            margin-top: 0;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .info-item {
+            background: #f5f5f5;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+
+        .info-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .tasks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .task-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .task-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .task-card h3 {
+            color: #667eea;
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .task-card .number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .task-card p {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .task-card .example {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .console-output {
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .console-output .output {
+            margin: 5px 0;
+        }
+
+        .console-output .output.success {
+            color: #00ff00;
+        }
+
+        .console-output .output.error {
+            color: #ff6b6b;
+        }
+
+        .console-output .output.info {
+            color: #87ceeb;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        table thead {
+            background: #667eea;
+            color: white;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .tasks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💻 3-amaliy ish - JavaScript asoslari</h1>
+            <p>Sonlar, satrlar va massivlar bilan ishlash</p>
+        </header>
+
+        <div class="info-section">
+            <h2>📋 Talaba Ma'lumotlari</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Talaba:</strong>
+                    Hudoyberganov Azizbek Hikmat o'g'li
+                </div>
+                <div class="info-item">
+                    <strong>Guruh:</strong>
+                    941-24
+                </div>
+                <div class="info-item">
+                    <strong>Variant:</strong>
+                    15
+                </div>
+                <div class="info-item">
+                    <strong>Topshirish:</strong>
+                    10.11.2026
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>📊 Masalalar Ro'yxati</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Funksiya Nomi</th>
+                            <th>Turi</th>
+                            <th>Holati</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>raqamlarSoni(n)</td>
+                            <td>Sonlar - osont</td>
+                            <td>✅ Bajarildi</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>engUzunSoz(s)</td>
+                            <td>Satrlar - osont</td>
+                            <td>✅ Bajarildi</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>ikkinchiEngKatta(arr)</td>
+                            <td>Massivlar - osont</td>
+                            <td>✅ Bajarildi</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>tubSonlariyigindi(raqam)</td>
+                            <td>Satrlar va sonlar - o'rtacha</td>
+                            <td>✅ Bajarildi</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>diagonallar(matritsa)</td>
+                            <td>Massivlar va ob'yektlar - o'rtacha</td>
+                            <td>✅ Bajarildi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>🧪 Masalalarni Ishga Tushirish</h2>
+            <div class="tasks-grid">
+                <div class="task-card">
+                    <span class="number">1</span>
+                    <h3>Sonlar - raqamlarSoni</h3>
+                    <p>1 dan n gacha bo'lgan raqamlarni qo'shish</p>
+                    <div class="example">
+// raqamlarSoni(5) → 15
+// raqamlarSoni(100) → 5050
+                    </div>
+                    <div class="button-group">
+                        <button onclick="runMasala1()">Ishga Tushir</button>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <span class="number">2</span>
+                    <h3>Satrlar - engUzunSoz</h3>
+                    <p>Satrda eng uzun so'zni topish</p>
+                    <div class="example">
+// engUzunSoz("Kitob") → "Kitob"
+// engUzunSoz("JavaScript asoslari")
+                    </div>
+                    <div class="button-group">
+                        <button onclick="runMasala2()">Ishga Tushir</button>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <span class="number">3</span>
+                    <h3>Massivlar - ikkinchiEngKatta</h3>
+                    <p>Ikkinchi eng katta elementni topish</p>
+                    <div class="example">
+// ikkinchiEngKatta([4,5,3,1]) → 4
+// ikkinchiEngKatta([5,5,5]) → 0
+                    </div>
+                    <div class="button-group">
+                        <button onclick="runMasala3()">Ishga Tushir</button>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <span class="number">4</span>
+                    <h3>Satrlar va Sonlar - tubSonlariyigindi</h3>
+                    <p>Bank karta raqamini Luhn algoritmi bo'yicha tekshirish</p>
+                    <div class="example">
+// tubSonlariyigindi("4539 1488 ...") → true
+                    </div>
+                    <div class="button-group">
+                        <button onclick="runMasala4()">Ishga Tushir</button>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <span class="number">5</span>
+                    <h3>Massivlar va Ob'yektlar - diagonallar</h3>
+                    <p>Matritsa diagonalini filterlash</p>
+                    <div class="example">
+// diagonallar([[1,2,3],[4,5,6],...])
+// → [1, 5, 9]
+                    </div>
+                    <div class="button-group">
+                        <button onclick="runMasala5()">Ishga Tushir</button>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <span class="number">🔄</span>
+                    <h3>Hammasini Ishga Tushirish</h3>
+                    <p>Barcha masalalarni ketma-ket ishga tushiramiz</p>
+                    <div class="button-group">
+                        <button onclick="runAllTasks()">Hammasini Ishga Tushir</button>
+                        <button onclick="clearConsole()">Tozalash</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="console-output" id="output">
+            <div class="output info">Console outputi bu yerda ko'rsatiladi...</div>
+            <div class="output info">Masala tugmasini bosing va natijani ko'ring!</div>
+        </div>
+
+        <footer>
+            <p><strong>3-amaliy ish - JavaScript asoslari</strong></p>
+            <p>Abu Rayhon Beruniy nomidagi Urganch davlat universiteti</p>
+            <p>Dasturiy injiniring kafedrase</p>
+        </footer>
+    </div>
+
+    <!-- Masala skriptlari -->
+    <script src="js/masala1.js"></script>
+    <script src="js/masala2.js"></script>
+    <script src="js/masala3.js"></script>
+    <script src="js/masala4.js"></script>
+    <script src="js/masala5.js"></script>
+
+    <script>
+        // Console outputni control qilish uchun
+        const outputDiv = document.getElementById('output');
+        const originalLog = console.log;
+        const originalError = console.error;
+
+        function addOutput(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `output ${type}`;
+            div.textContent = message;
+            outputDiv.appendChild(div);
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        }
+
+        // Console.log qo'llanma qilish
+        console.log = function(...args) {
+            addOutput(args.map(arg => {
+                if (typeof arg === 'object') {
+                    return JSON.stringify(arg, null, 2);
+                }
+                return String(arg);
+            }).join(' '), 'success');
+            originalLog.apply(console, args);
+        };
+
+        console.error = function(...args) {
+            addOutput('❌ ' + args.join(' '), 'error');
+            originalError.apply(console, args);
+        };
+
+        function clearConsole() {
+            outputDiv.innerHTML = '<div class="output info">Console tozalandi...</div>';
+        }
+
+        function runMasala1() {
+            clearConsole();
+            addOutput('=== 1-MASALA: raqamlarSoni ===', 'info');
+            addOutput('Test 1: raqamlarSoni(5)', 'info');
+            console.log('Natija:', raqamlarSoni(5), '(kutilgan: 15)');
+            addOutput('', 'info');
+            addOutput('Test 2: raqamlarSoni(100)', 'info');
+            console.log('Natija:', raqamlarSoni(100), '(kutilgan: 5050)');
+        }
+
+        function runMasala2() {
+            clearConsole();
+            addOutput('=== 2-MASALA: engUzunSoz ===', 'info');
+            addOutput('Test 1: engUzunSoz("Kitob")', 'info');
+            console.log('Natija:', engUzunSoz("Kitob"));
+            addOutput('', 'info');
+            addOutput('Test 2: engUzunSoz("JavaScript asoslari")', 'info');
+            console.log('Natija:', engUzunSoz("JavaScript asoslari"));
+        }
+
+        function runMasala3() {
+            clearConsole();
+            addOutput('=== 3-MASALA: ikkinchiEngKatta ===', 'info');
+            addOutput('Test 1: ikkinchiEngKatta([4, 5, 3, 1])', 'info');
+            console.log('Natija:', ikkinchiEngKatta([4, 5, 3, 1]), '(kutilgan: 4)');
+            addOutput('', 'info');
+            addOutput('Test 2: ikkinchiEngKatta([5, 5, 5])', 'info');
+            console.log('Natija:', ikkinchiEngKatta([5, 5, 5]), '(kutilgan: 0)');
+        }
+
+        function runMasala4() {
+            clearConsole();
+            addOutput('=== 4-MASALA: tubSonlariyigindi ===', 'info');
+            addOutput('Test 1: tubSonlariyigindi("4539 1488 0343 6467")', 'info');
+            console.log('Natija:', tubSonlariyigindi("4539 1488 0343 6467"), '(kutilgan: true)');
+            addOutput('', 'info');
+            addOutput('Test 2: tubSonlariyigindi("1234 5678 9012 3456")', 'info');
+            console.log('Natija:', tubSonlariyigindi("1234 5678 9012 3456"), '(kutilgan: false)');
+        }
+
+        function runMasala5() {
+            clearConsole();
+            addOutput('=== 5-MASALA: diagonallar ===', 'info');
+            addOutput('Test 1: diagonallar([[1,2,3],[4,5,6],[7,8,9]])', 'info');
+            console.log('Natija:', diagonallar([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), '(kutilgan: [1, 5, 9])');
+            addOutput('', 'info');
+            addOutput('Test 2: diagonallar([["html","css"],["js"]])', 'info');
+            console.log('Natija:', diagonallar([["html", "css"], ["js"]]), '(kutilgan: ["html"])');
+        }
+
+        function runAllTasks() {
+            clearConsole();
+            addOutput('🚀 BARCHA MASALALARNI ISHGA TUSHIRYAPMAN...', 'info');
+            addOutput('', 'info');
+
+            runMasala1();
+            addOutput('\n' + '='.repeat(50) + '\n', 'info');
+
+            runMasala2();
+            addOutput('\n' + '='.repeat(50) + '\n', 'info');
+
+            runMasala3();
+            addOutput('\n' + '='.repeat(50) + '\n', 'info');
+
+            runMasala4();
+            addOutput('\n' + '='.repeat(50) + '\n', 'info');
+
+            runMasala5();
+            addOutput('\n' + '='.repeat(50), 'info');
+            addOutput('✅ BARCHA MASALALAR BAJARILDI!', 'success');
+        }
+
+        // Sahifa yuklanganda boshlang'ich xabar
+        window.addEventListener('load', () => {
+            clearConsole();
+            addOutput('👋 Xush kelibsiz! Masala tugmasini bosing.', 'info');
+            addOutput('Yoki "Hammasini Ishga Tushir" tugmasini bosing', 'info');
+        });
+    </script>
+</body>
+</html>
