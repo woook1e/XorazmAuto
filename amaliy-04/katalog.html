@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog - E-Commerce</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h1>🛍️ Mahsulot Katalogi</h1>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div class="savat-icon">
+                        <span style="font-size: 24px; cursor: pointer;">🛒</span>
+                        <span id="savat-soni">0</span>
+                    </div>
+                    <button class="hamburger" onclick="hamburgerMenuniOchish()">☰</button>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Bosh sahifa</a></li>
+                    <li><a href="katalog.html">Katalog</a></li>
+                    <li><a onclick="modalni('ochish')" style="cursor: pointer;">Buyurtma</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu">
+                <ul>
+                    <li><a href="index.html">Bosh sahifa</a></li>
+                    <li><a href="katalog.html">Katalog</a></li>
+                    <li><a onclick="modalni('ochish')" style="cursor: pointer;">Buyurtma</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="filtrlar-section">
+                <h2>🔍 Qidiruv va Filtrlar</h2>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="qidiruv">Qidiruv:</label>
+                        <input
+                            type="text"
+                            id="qidiruv"
+                            placeholder="Mahsulot nomini kiriting..."
+                        >
+                    </div>
+                    <div class="filter-group">
+                        <label for="kategoriya">Kategoriya:</label>
+                        <select id="kategoriya">
+                            <option value="hammasi">Hammasi</option>
+                            <option value="audio">Audio</option>
+                            <option value="computer">Kompyuter</option>
+                            <option value="aksessuarlar">Aksessuarlar</option>
+                            <option value="gadget">Gadget</option>
+                            <option value="display">Displey</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="saralash">Saralash:</label>
+                        <select id="saralash">
+                            <option value="default">Standart</option>
+                            <option value="arzondan">Arzondan qimmatga</option>
+                            <option value="qimmatdan">Qimmatdan arzonга</option>
+                            <option value="alifbo">Alifbo bo'yicha</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section id="katalog-section">
+                <h2>📦 Barcha Mahsulotlar</h2>
+                <div id="katalog"></div>
+                <div class="stats">
+                    <div class="stat">
+                        <strong>Jami ko'rsatilgan:</strong>
+                        <span id="soni">0</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="modalni('yopish')">×</button>
+            <h2>Buyurtma Berish</h2>
+            <form id="forma">
+                <div class="form-group">
+                    <label for="ism">Ismingiz:</label>
+                    <input type="text" id="ism" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Telefon (+998XXXXXXXXX):</label>
+                    <input type="tel" id="telefon" placeholder="+998" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Yuborish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><strong>4-amaliy ish - E-Commerce Katalogi</strong></p>
+            <p>JavaScript bilan massiv metodlari, DOM va interaktiv komponentlar</p>
+            <p>&copy; 2026 Dasturlash Darslar</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/katalog.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>

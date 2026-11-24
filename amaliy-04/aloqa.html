@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloqa - E-Commerce</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h1>🛍️ Mahsulot Katalogi</h1>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div class="savat-icon">
+                        <span style="font-size: 24px; cursor: pointer;">🛒</span>
+                        <span id="savat-soni">0</span>
+                    </div>
+                    <button class="hamburger" onclick="hamburgerMenuniOchish()">☰</button>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Bosh sahifa</a></li>
+                    <li><a href="katalog.html">Katalog</a></li>
+                    <li><a href="aloqa.html">Aloqa</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu">
+                <ul>
+                    <li><a href="index.html">Bosh sahifa</a></li>
+                    <li><a href="katalog.html">Katalog</a></li>
+                    <li><a href="aloqa.html">Aloqa</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <h2>📞 Biz Bilan Bog'lanish</h2>
+                <p>Agar sizda savollar yoki takliflar bo'lsa, iltimos quyidagi formani to'ldiring.</p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+                    <div>
+                        <h3>Aloqa Formasi</h3>
+                        <form id="aloqa-forma">
+                            <div class="form-group">
+                                <label for="aloqa-ism">Ismingiz:</label>
+                                <input type="text" id="aloqa-ism" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="aloqa-email">Email:</label>
+                                <input type="email" id="aloqa-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="aloqa-telefon">Telefon:</label>
+                                <input type="tel" id="aloqa-telefon" placeholder="+998" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="aloqa-xabar">Xabar:</label>
+                                <textarea id="aloqa-xabar" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit">Yuborish</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div>
+                        <h3>Bizning Ma'lumotlar</h3>
+                        <div class="stat">
+                            <strong>📍 Manzil:</strong>
+                            <p>Urganch, O'zbekiston</p>
+                        </div>
+                        <div class="stat">
+                            <strong>📱 Telefon:</strong>
+                            <p>+998 (61) 223-45-67</p>
+                        </div>
+                        <div class="stat">
+                            <strong>✉️ Email:</strong>
+                            <p>info@ecommerce.uz</p>
+                        </div>
+                        <div class="stat">
+                            <strong>⏰ Ish vaqti:</strong>
+                            <p>Du-Ju: 09:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="modalni('yopish')">×</button>
+            <h2>Buyurtma Berish</h2>
+            <form id="forma">
+                <div class="form-group">
+                    <label for="ism">Ismingiz:</label>
+                    <input type="text" id="ism" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Telefon (+998XXXXXXXXX):</label>
+                    <input type="tel" id="telefon" placeholder="+998" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Yuborish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><strong>4-amaliy ish - E-Commerce Katalogi</strong></p>
+            <p>JavaScript bilan massiv metodlari, DOM va interaktiv komponentlar</p>
+            <p>&copy; 2026 Dasturlash Darslar</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/katalog.js"></script>
+    <script src="js/ui.js"></script>
+    <script>
+        const aloqaForma = document.getElementById("aloqa-forma");
+        if (aloqaForma) {
+            aloqaForma.addEventListener("submit", (e) => {
+                e.preventDefault();
+                ogohlantir("✅ Xabar qabul qilindi! Tez orada bog'lanamiz.");
+                aloqaForma.reset();
+            });
+        }
+    </script>
+</body>
+</html>
